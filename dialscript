@@ -1,0 +1,49 @@
+#!/bin/sh
+#echo "\n" for shell for modem send "\n" print "" for minicom "runscript" print"\n" do man runscript
+#echo "test"
+print "\n"
+print "Minicom dialing script\n"
+
+send "ATH"
+sleep 1
+
+send ATZ
+
+expect {
+       "OK"
+       timeout 4 exit 1
+}
+print "\n"
+
+sleep 1
+
+send ATQ0 V1 E1 S0=0 &C1 &D2 +FCLASS=0
+
+expect {
+       "OK"
+       timeout 4 exit 1
+}
+print "\n"
+
+sleep 1
+send AT+CGDCONT=1,\"IP\",\"$(APN)\"
+
+expect {
+       "OK"
+       timeout 4 exit 1
+}
+
+print "\n"
+sleep 1
+send ATDT$(DIALSTRING)
+
+expect {
+       "CONNECT" goto CONNECT
+       timeout 4 exit 1
+}
+
+print "\n"
+CONNECT:
+
+print "\nModem is connected\n"
+exit
