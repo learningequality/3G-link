@@ -1,0 +1,16 @@
+[connection]
+id=Nalanda 3G
+uuid=c32b1071-bde0-42ef-a973-0cfaafa6ee5e
+type=gsm
+autoconnect=false
+timestamp=1396568817
+
+[gsm]
+number=*99#
+apn=internet
+
+[ipv4]
+method=auto
+
+[serial]
+baud=115200
