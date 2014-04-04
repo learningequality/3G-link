@@ -1,0 +1,16 @@
+Source: ka-lite-3g-config
+Section: gnome
+Priority: extra
+Maintainer: Jamie Alexandre <jamie@learningequality.org>
+Build-Depends: 	debhelper (>= 9)
+Standards-Version: 3.9.4
+Homepage: https://learningequality.org/
+
+Package: ka-lite-3g-config
+Architecture: all
+Depends: bash,
+		 ${misc:Depends}
+Description: 3G configuration for KA Lite
+ .
+ Scripts to create a 3G connection in Ubuntu,
+ for updating and remotely administering KA Lite.

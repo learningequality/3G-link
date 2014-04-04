@@ -1,0 +1,5 @@
+#!/bin/sh
+
+sudo -u $SUDO_USER xdg-desktop-icon install --novendor /tmp/Connect3G.desktop
+sudo -u $SUDO_USER xdg-desktop-icon install --novendor /tmp/Disconnect3G.desktop
+

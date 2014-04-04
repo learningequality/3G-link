@@ -1,0 +1,16 @@
+Format-Specification: http://svn.debian.org/wsvn/dep/web/deps/dep5.mdwn?op=file&rev=135
+Name: KA Lite 3G Configuration
+Maintainer: Jamie Alexandre <jamie@learningequality.org>
+Source: https://learningequality.org/
+
+Files: *
+Copyright (C) 2014  Foundation for Learning Equality <info@learningequality.org>
+License: GPL-3
+   On Debian systems, the complete text of the GPL-3
+   can be found in the file `/usr/share/common-licenses/GPL-3'.
+
+Files: debian/*
+Copyright: 2014, Foundation for Learning Equality <info@learningequality.org>
+License: GPL-3
+   On Debian systems, the complete text of the GPL-3
+   can be found in the file `/usr/share/common-licenses/GPL-3'.

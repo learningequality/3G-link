@@ -1,0 +1,5 @@
+#!/bin/sh
+
+xdg-desktop-icon uninstall Connect3G.desktop
+xdg-desktop-icon uninstall Disconnect3G.desktop
+

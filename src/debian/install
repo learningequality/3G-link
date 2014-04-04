@@ -1,0 +1,6 @@
+connect_3g usr/sbin/
+disconnect_3g usr/sbin/
+Nalanda3GConnection etc/NetworkManager/system-connections/
+Connect3G.desktop tmp/
+Disconnect3G.desktop tmp/
+connect.png usr/share/icons/
