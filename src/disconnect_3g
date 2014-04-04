@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# find the UUID of the first GSM (mobile) NetworkManager connection
+GSM_UUID=$( nmcli c | grep gsm | head -n 1 | grep -E "[a-f0-9]{8}-([a-f0-9]{4}-){3}[a-f0-9]{12}" -o )
+
+# disconnect from the mobile connection
+nmcli -p con down uuid $GSM_UUID
