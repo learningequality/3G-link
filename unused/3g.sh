@@ -38,10 +38,10 @@ minicom -S dialscript &
 
 sleep 10
 
-# echo "Returned from dialscript, let's check if everything looks sane."
+echo "Returned from dialscript, let's check if everything looks sane."
 
-# if [ -f /var/lock/LCK..ttyUSB0 ] ; then
-#         echo "Lock file still there, it really shouldn't be."
-# fi
+if [ -f /var/lock/LCK..ttyUSB0 ] ; then
+        echo "Lock file still there, it really shouldn't be."
+fi
 
-# sudo pppd debug -detach defaultroute /dev/ttyUSB0 38400 &
+sudo pppd debug -detach defaultroute /dev/ttyUSB0 38400 &

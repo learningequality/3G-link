@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# restart Network Manager, as mobile device is left in a bad state upon disconnection 
+echo "Restarting network manager..." 
+sudo service network-manager restart 2>&1 > /dev/null
+
+# wait until the GSM network device (e.g. /dev/ttyUSB0) has recovered from restarting NetworkManager
+echo "Waiting for GSM device to load..."
+sleep 5
+while ! nmcli d | grep gsm > /dev/null
+do
+	echo "Waiting..."
+	sleep 3
+done
+echo "Device loaded, attempting to connect..."
+
+# ensure Networking is enabled
+sudo nmcli nm enable true 2> /dev/null
+
+# ensure Mobile Broadband is enabled
+sudo nmcli nm wwan on
+
+# find the UUID of the first GSM (mobile) NetworkManager connection
+GSM_UUID=$( nmcli c | grep gsm | head -n 1 | grep -E "[a-f0-9]{8}-([a-f0-9]{4}-){3}[a-f0-9]{12}" -o )
+
+# connect to the mobile connection
+nmcli -p con up uuid $GSM_UUID

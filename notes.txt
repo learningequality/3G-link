@@ -1,0 +1,9 @@
+
+AT+CGMR (Firmware)
+AT+CGSN (IMEI of Modem)
+AT+CIMI (IMSI of Modem)
+
+Signal strength: AT+CSQ
+Answer: +CSQ: <rssi (more=better)>, <ber, less=better>
+
+AT+COPS=?	List available networks 0-Unknown/2-Current/3-Forbidden, Longname, Shortname, Numerical-ID, "AcT"

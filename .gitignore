@@ -1,0 +1,7 @@
+src/debian/ka-lite-3g-config*
+src/debian/files
+*.deb
+*.tar.gz
+*.build
+*.changes
+*.dsc
